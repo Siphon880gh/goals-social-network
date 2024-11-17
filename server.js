@@ -37,9 +37,10 @@ const sess = {
     secret: '1db275a51d9eebde91409b',
     cookie: {},
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     store: new SequelizeStore({
-        db: sequelizeConnection
+        db: sequelizeConnection,
+        tableName: "Session"
     })
 };
 
@@ -61,7 +62,7 @@ app.use((req, res, next) => {
 });
 
 // Listen for requests
-sequelizeConnection.sync({ force: false }).then(() => {
+sequelizeConnection.sync({ force: true }).then(() => {
     let port = process.env.PORT || 3001;
     app.listen(port, () => {
         console.log(`Server listening at ${port}`);
