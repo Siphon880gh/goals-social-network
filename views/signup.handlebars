@@ -57,7 +57,7 @@
             </div>
             <div>
             <button class="standout" type="submit" data-route="/signup">Sign Up!</button>
-            <a href="/login" id="login">Login instead</a>
+            <a href="./login" id="login">Login instead</a>
             </div>
         </form>
     </div> <!-- form-body -->
@@ -72,7 +72,7 @@ $(".form-signup").on("submit", async(event)=>{
     if (username && password) {
         $.post("/api/signup", {username, password}).always(data=>{
             if(data.loggedIn) {
-                document.location.pathname = "/";
+                document.location.href = "./";
             } else {
                 alert(data.error);
             }

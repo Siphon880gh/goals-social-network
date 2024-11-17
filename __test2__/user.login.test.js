@@ -62,7 +62,7 @@ beforeAll(async() => {
             res.json({ loggedIn: 1 });
         } else {
             res.json({ loggedIn: 0 });
-            // res.redirect("/login");
+            // res.redirect("./login");
         }
 
     });

@@ -11,10 +11,10 @@ idle({
 idle({
     idle: 60000 * 5,
     onIdle: function() {
-        let isLoggedInBasedOnDom = $("a[href='/logout']").length;
+        let isLoggedInBasedOnDom = $("a[href='./logout']").length;
         if (isLoggedInBasedOnDom) {
             alert("Logging out for inactivity...");
-            document.location.pathname = "/logout";
+            document.location.pathname = "./logout";
         }
     }
 }).start();

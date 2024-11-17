@@ -121,14 +121,14 @@ router.get('/chatroom', (req, res) => {
     if (dataStraightThrough.username) {
         res.render('chatroom', dataStraightThrough);
     } else {
-        res.redirect('/login')
+        res.redirect('./login')
     }
 });
 
 router.get('/dashboard', (req, res) => {
     // User must be logged in to view personal dashboard
     if (!req.session.loggedIn) {
-        res.redirect('/login');
+        res.redirect('./login');
         return;
     }
 
@@ -142,7 +142,7 @@ router.get('/dashboard', (req, res) => {
 router.get('/goal-planner', async(req, res) => {
     // User must be logged in to view personal dashboard
     if (!req.session.loggedIn) {
-        res.redirect('/login');
+        res.redirect('./login');
         return;
     }
 
@@ -190,7 +190,7 @@ router.get('/goal-planner', async(req, res) => {
 router.get('/profile/edit', async(req, res) => {
     // User must be logged in to view personal dashboard
     if (!req.session.loggedIn) {
-        res.redirect("/login");
+        res.redirect("./login");
         return;
     }
 
@@ -394,14 +394,14 @@ router.get('/profile/:userId', async(req, res) => {
 router.get('/profile', async(req, res) => {
     // User must be logged in to view personal dashboard
     if (!req.session.loggedIn) {
-        res.redirect('/login');
+        res.redirect('./login');
         return;
     }
 
     // debugger;
     var userId = req.session.user.userId;
     var username = req.session.user.username;
-    res.redirect(`/profile/${userId}`);
+    res.redirect(`../profile/${userId}`);
 });
 
 router.get('/signup', (req, res) => {
@@ -413,7 +413,7 @@ router.get('/signup', (req, res) => {
 });
 
 router.get('/logout', (req, res) => {
-    res.redirect("/api/logout");
+    res.redirect("./api/logout");
 });
 
 module.exports = router;

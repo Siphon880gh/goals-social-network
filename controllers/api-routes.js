@@ -15,7 +15,7 @@ const {
 router.put('/users', async(req, res) => {
     // Only logged in users
     if (!req.session.loggedIn)
-        res.redirect('/login');
+        res.redirect('./login');
 
     userId = parseInt(req.session.user.userId);
     // console.assert(userId === 1, userId);

@@ -5,7 +5,7 @@ let drone = new ScaleDrone('msKNYliGbSuotvDl');
 //delete message from chatroom table
 let deleteMessage = (id) => {
   const idObject = { id }
-  fetch('/api/chatroom', {
+  fetch('./api/chatroom', {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -22,7 +22,7 @@ let deleteMessage = (id) => {
 
 //Before post check length and then delete message if table length > 50
 let checkDatabaseLengthAndUpdate = () => {
-  fetch('/api/chatroom', {
+  fetch('./api/chatroom', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
@@ -52,7 +52,7 @@ let addDiscussionToDatabase = (username, message) => {
    username, message
  }
 
-  fetch('/api/chatroom', {
+  fetch('./api/chatroom', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ let addDiscussionToDatabase = (username, message) => {
 
 
 let getRecentChat = () => {
-  fetch('/api/chatroom', {
+  fetch('./api/chatroom', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'

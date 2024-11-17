@@ -128,7 +128,7 @@ input[type=radio] {
       <form>
       {{#each avatars}}
         <article class="carousel-item {{#if @first}}active{{/if}}">
-          <img src="/assets/img/users-default-avatars/{{avatar}}.png"></img>
+          <img src="../assets/img/users-default-avatars/{{avatar}}.png"></img>
           <div class="choose-input-group"><label for="">Choose</label> <input type="radio" class="avatar-choice" name="avatar" value="{{avatar}}"> </div>
         </article> <!-- .carousel-item.active -->
       {{/each}}
@@ -204,12 +204,12 @@ function updateUserInfo() {
         'Accept' : 'application/json',
         'Content-Type' : 'application/json'
     },
-    url: "/api/users",
+    url: "../api/users",
     type: "PUT",
     data: JSON.stringify(userInfoData),
     success: function(data){
       console.log(data);
-      window.location.pathname = "/profile";
+      window.location.href = "./profile";
     },
     error: function(error){
       console.log(error);
