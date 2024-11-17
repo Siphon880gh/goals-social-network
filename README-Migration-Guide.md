@@ -7,4 +7,6 @@ Database: Adjust the DB_NAME, DB_USER, DB_PW, DB_PORT at the .env file for authe
 Ports: Assign a unique port for your Express app. This needs to be unique from all your other Express apps on this same server.
 
 Base URL - Here's how you replace the baseURL for this app:
-- grep for `/app/goals-social-network/` and replace with your new baseURL. Or you may use sed
+- grep for `/app/goals-social-network/` and replace with your new baseURL. Or you may use sed to match and replace.
+
+Reverse Proxy: `/app/goals-social-network[/]*` proxy passes to `127.0.0.1:PORT` where PORT is the unique Express port.
