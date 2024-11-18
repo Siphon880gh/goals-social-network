@@ -8,7 +8,7 @@ By Aidan Meyer, Angela Kao, Weng Fei Fung. A social network based around peopleâ
 
 Demo
 ---
-https://goals-social-network.herokuapp.com/
+### [Try it out now](https://wengindustries.com/app/goals-social-network).
 
 Screenshots
 ---
