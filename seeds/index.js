@@ -21,6 +21,7 @@ const {
 async function seedAll() {
 
     // To create these users in order with specific Id's, we can't use bulkCreate because it sometimes creates out of order.
+    await User.sync({force:true});
     await User.create({
             username: "test",
             password: "test"
@@ -41,6 +42,7 @@ async function seedAll() {
         }, { individualHooks: true })
         .catch(err => { console.log(err); });
 
+    await Posts.sync({force:true});
     await Posts.bulkCreate([{
         user_id: 1,
         goal: "Lose weight",
@@ -67,6 +69,7 @@ async function seedAll() {
         end: moment(new Date()).add(30, "days").format("YYYY-MM-DD hh:mm:ss")
     }]);
 
+    await Comments.sync({force:true});
     await Comments.bulkCreate([{
         post_id: 2,
         user_id: 2,
@@ -78,6 +81,7 @@ async function seedAll() {
     }]).catch(err => { console.log(err); });
 
 
+    await Milestones.sync({force:true});
     await Milestones.bulkCreate([{
         post_id: 1,
         milestone: "Log daily on MyFitnessPal",
