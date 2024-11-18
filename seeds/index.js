@@ -22,21 +22,21 @@ async function seedAll() {
 
     // To create these users in order with specific Id's, we can't use bulkCreate because it sometimes creates out of order.
     await User.create({
-            username: "testUser",
-            password: "testUser"
+            username: "test",
+            password: "test"
         }, { individualHooks: true })
         .catch(err => { console.log(err); });
 
     await User.create({
-            username: "testUser2",
-            password: "testUser2",
+            username: "test2",
+            password: "test2",
             avatar: "o"
         }, { individualHooks: true })
         .catch(err => { console.log(err); });
 
     await User.create({
-            username: "testUser3",
-            password: "testUser3",
+            username: "test3",
+            password: "test3",
             avatar: "j"
         }, { individualHooks: true })
         .catch(err => { console.log(err); });
