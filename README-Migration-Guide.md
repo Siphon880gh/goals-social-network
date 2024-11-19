@@ -9,6 +9,9 @@ Ports: Assign a unique port for your Express app at .env's PORT variable. This n
 Base URL - Here's how you replace the baseURL for this app:
 - Run grep for `/app/goals-social-network/` and replace with your new baseURL. Or you may use sed to match and replace.
 
+Envs:
+- ./.env
+
 Reverse Proxies: 
 - `/app/goals-social-network[/]*` proxy passes to `127.0.0.1:PORT` where PORT is the unique Express port.
 
