@@ -44,3 +44,6 @@ Eg.
     }
   }
 ```
+
+Start script at remote server:
+- From the app root folder: `npm run start`
